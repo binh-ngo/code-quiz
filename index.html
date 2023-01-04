@@ -4,36 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href ="assets/css/style.css">
-    <title>Coding Quiz</title>
+    <title>Food Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <a href="./highscores.html"> High Scores </a>
-        <h3 id = "timer"></h3> 
+        <a href="./highscores.html"> Leaderboard </a>
+        <h3 id="timer"></h3>
     </header>
-
     <main>
-        <section id = "instructions">
-            <p>Click to start this fun fact quiz!</p>
-            <button id = "start-quiz">Start Quiz!</button>
-        </section>
+        <section id="greeting">
+            <p>
+                🍣🥟 Click to start this food fun fact quiz! 🍱🍜
 
-        <section id = "game" class = "hide">
-            <div id = "correct" class = "hide"></div>
-            <h2 id = "question"></h2>
-            <div id="answer-buttons"> </div>
+            </p>
+            <button id="start">🌭🍔 Start Quiz! 🌮🍛</button>
         </section>
-
-        <section id = "score-result" class = "hide">
-            <h1>Good job! Your score was "
-                <span id = "score"></span>
-                "! Add your intials to be added to the leaderboard!"
-            </h1>
+    
+        <section id="quiz" class="hide">
+            <div id="is-correct" class="hide"></div>
+            <h2 id="question"></h2>
+            
+            <div id="answers"></div>
+           
+        </section>
+        <section id="leaderboard" class="hide">
+            <h1>You got a score of <span id="score"></span>! Add your initials to the leaderboard!</h1>
             <form>
-                <input type = "text" placeholder ="Initials Here">
-                <button>Post Score</button>
+                <input id = "textboxid" type="text" placeholder="Initials">
+                <button>Post Score!</button>
             </form>
         </section>
     </main>
