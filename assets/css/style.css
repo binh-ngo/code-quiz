@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, serif;
+}
+
+body {
+    background-image: url("../img/brooke-lark-4J059aGa5s4-unsplash.jpg");
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #949398;
+    height: 3rem;
+    padding: 0 100px;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    border-bottom: 2px solid black;
+}
+
+section {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    min-height: 500px;
+
+}
+
+form {
+    width: 20rem;
+    height: 2rem;
+}
+
+.hide, #answers.hide {
+    display: none;
+}
+
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
+
+#greeting{
+    flex-direction: column;
+    justify-content: space-between ;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#greeting button {
+    background-color: #949398;
+    font-size:1em;
+}
+
+#greeting button:hover {
+    opacity: 0.75;
+}
+
+#quiz {
+    flex-wrap: wrap;
+    font-size: 2em;
+    margin: auto;
+}
+
+#question {
+    margin: auto;
+}
+
+#answers {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* styles each of the answers */
+#answers * {
+    flex: 1 0 45%;
+    border: 1px dashed black;
+    font-size: 1em;
+}
+
+#is-correct{
+    text-align: center;
+    font-size: 4em;
+    margin: auto;
+}
