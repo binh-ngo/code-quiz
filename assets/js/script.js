@@ -6,6 +6,8 @@ var questionEl = document.querySelector("#question")
 var answersEl = document.querySelector("#answers")
 var isCorrectEl = document.querySelector("#is-correct")
 var timerEl = document.querySelector("#timer");
+var scoreEl = document.querySelector("#score");
+var highScoresEl = document.querySelector("#highScores")
 
 
 var currentQuestion = 0;
@@ -103,3 +105,21 @@ answersEl.addEventListener("click", function(event) {
       event.target.getAttribute("data-correct") ? correctGuess() : wrongGuess();
     }
 })
+
+// updating high scores
+document.querySelector("form").addEventListener("submit", function(event){
+    event.preventDefault();
+    //if the parsed score is falsey, empty the array. Otherwise push the score to the leaderboard
+    var currentScores = JSON.parse(localStorage.getItem("scores")) || [];
+    var user = {
+        initials:document.querySelector("input").value,
+        score:timeLeft
+    };
+    //pushes user object to the high scores website and compares the two scores and sorts them
+    currentScores.push(user);
+    currentScores.sort((a, b) => b.score - a.score)
+    localStorage.setItem("scores", JSON.stringify(currentScores));
+    location.assign("./highscores.html")    
+})
+
+

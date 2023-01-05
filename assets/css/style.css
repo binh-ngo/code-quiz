@@ -1,19 +1,21 @@
-*{
+/* Universal */
+* {
     margin: 0;
     padding: 0;
     font-family: Garamond, serif;
 }
 
+/* Element */
+
 body {
     background-image: url("../img/brooke-lark-4J059aGa5s4-unsplash.jpg");
-
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #949398;
+    background: bisque;
     height: 3rem;
     padding: 0 100px;
     margin-bottom: 3rem;
@@ -34,6 +36,8 @@ form {
     height: 2rem;
 }
 
+/* Class */
+
 .hide, #answers.hide {
     display: none;
 }
@@ -46,16 +50,29 @@ form {
     color: red;
 }
 
+/* ID */
+
 #greeting{
     flex-direction: column;
     justify-content: space-between ;
+    font-weight: 800;
+    margin-top: 8rem;
     font-size: 3rem;
     text-align: center;
 }
 
+#greeting p {
+    background-color: bisque;
+    width: 80%;
+    align-self: center;
+    border: 1px solid black;
+}
+
 #greeting button {
-    background-color: #949398;
+    background-color: bisque;
     font-size:1em;
+    width: 35%;
+    align-self: center;
 }
 
 #greeting button:hover {
@@ -70,6 +87,8 @@ form {
 
 #question {
     margin: auto;
+    background-color: bisque;
+    border: 1px solid black;
 }
 
 #answers {
@@ -81,7 +100,8 @@ form {
 /* styles each of the answers */
 #answers * {
     flex: 1 0 45%;
-    border: 1px dashed black;
+    background-color: bisque;
+    border: 1px solid black;
     font-size: 1em;
 }
 
@@ -89,4 +109,35 @@ form {
     text-align: center;
     font-size: 4em;
     margin: auto;
+    border-radius: 25%;
+    background-color: bisque;
+}
+
+#leaderboard {
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+#leaderboard button {
+    font-size: 2rem;
+}
+
+#leaderboard button:hover {
+    opacity: 25%;
+}
+
+#user-scores {
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 100%;
+    font-size: 2rem;
+    background-color: bisque;
+}
+
+#textboxid {
+    height: 4rem;
+    width: 8rem;
+    font-size: 2rem;
 }
