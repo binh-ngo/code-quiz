@@ -67,7 +67,7 @@ function correctGuess() {
     answersEl.setAttribute("class","hide");
     questionEl.setAttribute("class","hide");
     currentQuestion++;
-    if(currentQuestion<shuffled.length){
+    if(currentQuestion < shuffled.length){
         setTimeout(loadNextQuestion,500);
     } else {
         endQuiz();
@@ -98,27 +98,31 @@ function endQuiz() {
     scoreEl.textContent = timeLeft;
 }
 
-// ternary operator that says if the user clicks on the correct answer button, run the correctGuess function, else run the wrongGuess function.
 startBtn.addEventListener("click", startQuiz);
+// ternary operator that says if the user clicks on the correct answer button, run the correctGuess function, else run the wrongGuess function.
 answersEl.addEventListener("click", function(event) {
     if(event.target.matches("button")) {
       event.target.getAttribute("data-correct") ? correctGuess() : wrongGuess();
     }
 })
 
-// updating high scores
+// submitting high scores. 
 document.querySelector("form").addEventListener("submit", function(event){
     event.preventDefault();
-    //if the parsed score is falsey, empty the array. Otherwise push the score to the leaderboard
+    // if the parsed object isn't a string, empty the array. Otherwise push the score to the leaderboard as a js object
     var currentScores = JSON.parse(localStorage.getItem("scores")) || [];
+    //object keys and values
     var user = {
         initials:document.querySelector("input").value,
         score:timeLeft
     };
     //pushes user object to the high scores website and compares the two scores and sorts them
     currentScores.push(user);
+    // .sort sorts elements of an array. By using this notation, it lists the higher score on the left of the lower score thus making an ascending ordered list. Since I want the higher score listed first, I swapped b and a
     currentScores.sort((a, b) => b.score - a.score)
+    // we take the scores object and turn it into a JSON string so that the var scores a can "get" it in highscores.js
     localStorage.setItem("scores", JSON.stringify(currentScores));
+    //takes user to the leaderboard
     location.assign("./highscores.html")    
 })
 
